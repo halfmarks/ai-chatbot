@@ -1,0 +1,24 @@
+"label(TDE)"
+"label(OVO)"
+"label(a) -> -artist(a)"
+"makes(x,y)  -> artist(x) & label(y)"
+"makes(Kendrick,TDE)"
+"makes(Drake,OVO)"
+"hasGrammy(l) | hasPlatinum(l) & artist(l) -> topArtist(l)"
+"upcoming(k) -> -topArtist(k) & -hasGrammy(k) & -hasPlatinum(k) & artist(k)"
+"hasGrammy(Kendrick)"
+"upcoming(Cozz)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

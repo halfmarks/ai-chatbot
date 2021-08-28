@@ -3,104 +3,160 @@
     #defines the unit of knowledge in knowledge base
     <category>
         #pattern - what a user might input
-        <pattern> HELLO </pattern>
+        <pattern>HELLO</pattern>
         #template - how it will respond to input
         <template>Hello! How are you?</template>
     </category>
+
     <category>
-        <pattern> HELLO * </pattern>
+        <pattern>HELLO *</pattern>
         <template>
             <srai>HELLO</srai>
         </template>
     </category>
+
     <category>
-        <pattern> MY NAME IS * </pattern>
+        <pattern>MY NAME IS *</pattern>
         <template>
-            Hello <set name = "nameUser"><star/></set>
+            Hello
+            <set name="nameUser">
+                <star/>
+            </set>
         </template>
     </category>
+
     <category>
-        <pattern> MY FAVOURITE ALBUM IS *</pattern>
+        <pattern>MY FAVOURITE ALBUM IS *</pattern>
         <template>
-            <set name = "album"><star/></set>, that's a really good album
+            <set name="album">
+                <star/>
+            </set>
+            , that's a really good album
         </template>
     </category>
+
     <category>
-        <pattern> HI </pattern>
+        <pattern>HI</pattern>
         <template>
             <random>
-            	<li> Hello!</li>
-            	<li> Nice to meet you. </li>
-            	<li> Hi, i'm excited to chat to you </li>
+                <li>Hello!</li>
+                <li>Nice to meet you.</li>
+                <li>Hi, i'm excited to chat to you</li>
             </random>
         </template>
     </category>
+
     <category>
-        <pattern> HI * </pattern>
+        <pattern>HI *</pattern>
         <template>
             <srai>HELLO</srai>
         </template>
     </category>
+
     <category>
-        <pattern> HOW ARE YOU </pattern>
+        <pattern>HOW ARE YOU</pattern>
         <template>
             I'm functioning within normal parameters, thanks for asking.
         </template>
     </category>
+
     <category>
-        <pattern> I AM FINE </pattern>
+        <pattern>HOW ARE YOU DOING</pattern>
+        <template>
+            <srai>HOW ARE YOU</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM FINE</pattern>
         <template>
             That's good to know. What would you like to discuss about?
         </template>
     </category>
+
     <category>
-        <pattern> BYE </pattern>
-        <template>#0$Bye! Nice talking to you. You take care now, <get name="nameUser"/>.</template>
+        <pattern>I AM WELL</pattern>
+        <template>
+            <srai>I AM FINE</srai>
+        </template>
     </category>
+
     <category>
-        <pattern> GOODBYE </pattern>
+        <pattern>I AM GOOD</pattern>
+        <template>
+            <srai>I AM FINE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>BYE</pattern>
+        <template>#18$Bye! Nice talking to you. You take care now,<get name="nameUser"/>.
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>
+            <srai>BYE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>GOOD BYE</pattern>
+        <template>
+            <srai>BYE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>FAREWELL</pattern>
+        <template>
+            <srai>BYE</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>EXIT</pattern>
         <template>
             <srai>BYE</srai>
         </template>
     </category>
     <category>
-        <pattern> EXIT </pattern>
+        <pattern>THANKS</pattern>
         <template>
-            <srai>BYE</srai>
+            <random>
+                <li>You are most welcome</li>
+                <li>No worries mate</li>
+                <li>All good man</li>
+            </random>
         </template>
     </category>
     <category>
-        <pattern> THANKS </pattern>
-        <template><random>
-            <li>You are most welcome</li>
-            <li>No worries mate</li>
-            <li>All good man</li>
-        </random></template>
-    </category>
-    <category>
-        <pattern> THANK YOU </pattern>
+        <pattern>THANK YOU</pattern>
         <template>
             <srai>THANKS</srai>
         </template>
     </category>
     <category>
-        <pattern> CHEERS </pattern>
+        <pattern>CHEERS</pattern>
         <template>Sure mate.</template>
     </category>
     <category>
-        <pattern> CHEERS * </pattern>
+        <pattern>CHEERS *</pattern>
         <template>Sure mate.</template>
     </category>
     <!-- Weather API -->
+
     <category>
-        <pattern> WHAT IS THE WEATHER LIKE IN * </pattern>
+        <pattern>WHAT IS THE WEATHER LIKE IN *</pattern>
         <template>
             #2$
             <star/>
         </template>
     </category>
+
     <category>
-        <pattern> HOW IS THE WEATHER IN * </pattern>
+        <pattern>HOW IS THE WEATHER IN *</pattern>
         <template>
             <srai>
                 WHAT IS THE WEATHER LIKE IN
@@ -108,35 +164,98 @@
             </srai>
         </template>
     </category>
-    
-    <!--- genius api -->
+
     <category>
-         <pattern> WHAT ARE THE LYRICS TO *</pattern>
-         <template>
-              #4$
-              <star index="1"/>
-         </template>
+        <pattern>WHAT THE WEATHER IS IN *</pattern>
+        <template>
+            <srai>
+                WHAT IS THE WEATHER LIKE IN
+                <star/>
+            </srai>
+        </template>
     </category>
+
     <category>
-         <pattern> THE LYRICS TO * </pattern>
-         <template>
-              <srai>
-                   WHAT ARE THE LYRICS TO
-                   <star/>
-              </srai> 
-         </template>
+        <pattern>I HAVE A QUESTION</pattern>
+        <template>
+            #3$
+        </template>
     </category>
-    
+
+    <category>
+        <pattern>AUDIO SETTINGS</pattern>
+        <template>
+            #4$
+        </template>
+    </category>
+
+    <!--- CNN -->
+    <category>
+        <pattern>IDENTIFY THE GENRE</pattern>
+        <template>
+            #5$
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS THIS PICTURE</pattern>
+        <template>
+            <srai>
+                IDENTIFY THE GENRE
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS THIS IMAGE</pattern>
+        <template>
+            <srai>
+                IDENTIFY THE GENRE
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT ALBUM GENRE *</pattern>
+        <template>
+            <srai>
+                IDENTIFY THE GENRE
+                <star/>
+            </srai>
+        </template>
+    </category>
+
+
     <!--- Wikipedia API -->
     <category>
-        <pattern> WHAT IS A * </pattern>
+        <pattern>WHAT IS A *</pattern>
         <template>
             #1$
             <star index="1"/>
         </template>
     </category>
     <category>
-        <pattern> WHAT IS AN * </pattern>
+        <pattern>WHAT IS AN *</pattern>
+        <template>
+            <srai>
+                WHAT IS A
+                <star/>
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS *</pattern>
+        <template>
+            <srai>
+                WHAT IS A
+                <star/>
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHAT IS *</pattern>
         <template>
             <srai>
                 WHAT IS A
@@ -145,7 +264,7 @@
         </template>
     </category>
     <category>
-        <pattern> WHAT IS * </pattern>
+        <pattern>DEFINE *</pattern>
         <template>
             <srai>
                 WHAT IS A
@@ -154,7 +273,7 @@
         </template>
     </category>
     <category>
-        <pattern> DEFINE * </pattern>
+        <pattern>WHO IS *</pattern>
         <template>
             <srai>
                 WHAT IS A
@@ -162,21 +281,107 @@
             </srai>
         </template>
     </category>
+
+    <!-- Logic input -->
     <category>
-        <pattern> WHO IS * </pattern>
+        <pattern>I KNOW THAT * IS *</pattern>
+        <template>#31$
+            <star index="1"/> IS <star index="2"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I KNOW * IS AN *</pattern>
         <template>
             <srai>
-                WHAT IS A
-                <star/>
+                I KNOW THAT <star/> is <star/>
             </srai>
         </template>
     </category>
+
+    <category>
+        <pattern>CHECK THAT * IS AN *</pattern>
+        <template>#32$
+            <star index="1"/>
+            is an
+            <star index="2"/>
+        </template>
+    </category>
+
+    <!--signed logic-->
+
+    <category>
+        <pattern>DID * SIGN *</pattern>
+        <template>#34$
+            <star index="1"/>
+            sign
+            <star index="2"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I KNOW THAT * SIGNED *</pattern>
+        <template>#35$
+            <star index="1"/>
+            signed
+            <star index="2"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS * A TOP ARTIST</pattern>
+        <template>#36$
+            <star index="1"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>IS * A LEADING ARTIST</pattern>
+        <template>
+            <srai>
+                IS <star/> A TOP ARTIST
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I KNOW * IS A TOP ARTIST</pattern>
+        <template>#37$
+            <star index="1"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I KNOW * IS A LEADING ARTIST</pattern>
+        <template>
+            <srai>
+                I KNOW <star/> IS A TOP ARTIST
+            </srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DOES * HAVE A GRAMMY</pattern>
+        <template>#38$
+            <star index="1"/>
+        </template>
+    </category>
+
+    <category>
+        <pattern>I KNOW THAT * HAS A GRAMMY</pattern>
+        <template>#39$
+            <star index="1"/>
+        </template>
+    </category>
+
+
     <!-- Default reaction -->
     <category>
-        <pattern> * </pattern>
+        <pattern>*</pattern>
         <template>
             #99$
             <star index="1"/>
         </template>
     </category>
+
 </aiml>

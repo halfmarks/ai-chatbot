@@ -1,0 +1,7 @@
+"Label(TDE)"
+"Artist(Kendrick Lamar)"
+"signed (artist, label) -> Label(label)"
+"Grammy (x) -> Top10 (x)"
+"Upcoming (x) -> -Top10(x)"
+"British (Tim)"
+"-European (Jim)"
